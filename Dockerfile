@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD sanic -H 0.0.0.0 server.app
+CMD python3 server.py
