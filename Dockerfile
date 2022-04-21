@@ -1,5 +1,9 @@
 FROM python
 
+ARG USER_ID
+RUN useradd -ms /bin/bash USER_ID
+USER USER_ID
+
 WORKDIR /app
 
 COPY requirements.txt .

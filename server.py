@@ -1,7 +1,7 @@
 from sanic import Sanic
 from sanic.response import text
 
-app = Sanic("My Hello, world app")
+app = Sanic("MyHelloWorldApp")
 
 
 @app.get("/")
