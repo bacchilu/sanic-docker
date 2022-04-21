@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD sanic server.app --host=0.0.0.0
+CMD sanic server.app --host=0.0.0.0 --fast
