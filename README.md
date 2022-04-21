@@ -24,3 +24,8 @@ In this way I can edit the shared volumes with the same privileges.
 ### Run
 
     sudo docker run --rm -it -e `id -u` -v `pwd`:/app -p 5000:8000 sanic-app:debug
+
+## docker-compose
+
+    sudo docker-compose up -d
+    sudo docker-compose down
