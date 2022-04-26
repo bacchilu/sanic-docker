@@ -29,3 +29,7 @@ In this way I can edit the shared volumes with the same privileges.
 
     sudo docker-compose up -d
     sudo docker-compose down
+
+Also usefull:
+
+    sudo docker logs --follow CONTAINER
