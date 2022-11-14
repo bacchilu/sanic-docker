@@ -4,7 +4,7 @@ COPY requirements.txt .
 
 RUN pip3 install -r requirements.txt
 
-ARG USER_ID
+ARG USER_ID=1000
 RUN useradd -ms /bin/bash USER_ID
 USER USER_ID
 

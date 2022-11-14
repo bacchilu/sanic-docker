@@ -9,21 +9,21 @@ In this way I can edit the shared volumes with the same privileges.
 
 ### Build
 
-    sudo docker build -t sanic-app .
+    sudo docker build -t bacchilu/sanic-app .
 
 ### Run
 
-    sudo docker run --rm -e `id -u` -p 80:8000 -d sanic-app
+    sudo docker run --rm -e `id -u` -p 80:8000 -d bacchilu/sanic-app
 
 ## Developement
 
 ### Build
 
-    sudo docker build -t sanic-app:debug -f Dockerfile.dev .
+    sudo docker build -t bacchilu/sanic-app:debug -f Dockerfile.dev .
 
 ### Run
 
-    sudo docker run --rm -it -e `id -u` -v `pwd`:/app -p 5000:8000 sanic-app:debug
+    sudo docker run --rm -it -e `id -u` -v `pwd`:/app -p 5000:8000 bacchilu/sanic-app:debug
 
 ## docker-compose
 
@@ -33,3 +33,7 @@ In this way I can edit the shared volumes with the same privileges.
 Also usefull:
 
     sudo docker logs --follow CONTAINER
+
+## Docker Hub
+
+Currently available at [https://hub.docker.com/repository/docker/bacchilu/sanic-app](https://hub.docker.com/repository/docker/bacchilu/sanic-app).
