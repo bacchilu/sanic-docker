@@ -10,6 +10,7 @@ In this way I can edit the shared volumes with the same privileges.
 ### Build
 
     sudo docker build -t bacchilu/sanic-app .
+    sudo docker push bacchilu/sanic-app
 
 ### Run
 
@@ -37,3 +38,5 @@ Also usefull:
 ## Docker Hub
 
 Currently available at [https://hub.docker.com/repository/docker/bacchilu/sanic-app](https://hub.docker.com/repository/docker/bacchilu/sanic-app).
+
+    sudo docker run --rm -it -p 80:8000 -d bacchilu/sanic-app
