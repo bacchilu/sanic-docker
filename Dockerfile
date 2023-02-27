@@ -1,16 +1,25 @@
 FROM python
-
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt
-
-ARG USER_ID=1000
-RUN useradd -ms /bin/bash USER_ID
-USER USER_ID
+LABEL maintainer="Luca Bacchi <bacchilu@gmail.com> (https://github.com/bacchilu)"
 
 WORKDIR /app
 
-COPY . .
+ARG UID=1000
+ARG GID=1000
+ARG USERNAME=bacchilu
+
+RUN groupadd -g "${GID}" ${USERNAME}
+RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" ${USERNAME}
+RUN chown ${USERNAME}:${USERNAME} -R /app
+
+USER ${USERNAME}
+
+COPY --chown=${USERNAME}:${USERNAME} requirements.txt .
+
+RUN pip3 install -r requirements.txt
+
+ENV PATH="${PATH}:/home/${USERNAME}/.local/bin"
+
+COPY --chown=${USERNAME}:${USERNAME} . .
 
 EXPOSE 8000
 
