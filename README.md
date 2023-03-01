@@ -20,11 +20,11 @@ In this way I can edit the shared volumes with the same privileges.
 
 ### Build
 
-    sudo docker build -t bacchilu/sanic-app:debug -f Dockerfile.dev .
+    sudo docker build --build-arg UID=`id -u` --build-arg GID=`id -g` -t bacchilu/sanic-app:debug -f Dockerfile.dev .
 
 ### Run
 
-    sudo docker run --rm -it -e `id -u` -v `pwd`:/app -p 5000:8000 bacchilu/sanic-app:debug
+    sudo docker run --rm -it -v `pwd`/src:/app -p 5000:8000 bacchilu/sanic-app:debug
 
 ## docker-compose
 

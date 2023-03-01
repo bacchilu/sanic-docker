@@ -20,7 +20,7 @@ ENV PYTHONPATH="."
 ENV PATH="${PATH}:/home/python/.local/bin"
 ENV USER="python"
 
-COPY --chown=python:python . .
+COPY --chown=python:python ./src .
 
 EXPOSE 8000
 
