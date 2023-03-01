@@ -40,5 +40,3 @@ Also usefull:
 Currently available at [https://hub.docker.com/repository/docker/bacchilu/sanic-app](https://hub.docker.com/repository/docker/bacchilu/sanic-app).
 
     sudo docker run --rm -it -p 80:8000 -d bacchilu/sanic-app
-
-https://bacchilu.github.io/hnews/#/34940181
