@@ -6,6 +6,7 @@ services:
       args:
         - "UID=${UID}"
         - "GID=${GID}"
+        - "MODE=PROD"
     ports:
       - '80:8000'
     command: [ "sanic", "server.app", "--host=0.0.0.0", "--fast" ]
@@ -16,6 +17,7 @@ services:
       args:
         - "UID=${UID}"
         - "GID=${GID}"
+        - "MODE=DEV"
     ports:
       - '5000:8000'
     command: [ "sanic", "server.app", "--host=0.0.0.0", "--dev" ]

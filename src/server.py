@@ -7,4 +7,4 @@ app = Sanic("MyHelloWorldApp")
 
 @app.get("/")
 async def hello_world(request: Request):
-    return text("Hello, Sanic! - 1.0.0")
+    return text(f"Hello, Sanic! - 1.0.0 ({app.config.MODE})")

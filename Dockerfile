@@ -5,6 +5,7 @@ WORKDIR /app
 
 ARG UID
 ARG GID
+ARG MODE
 
 RUN groupadd -g "${GID}" python
 RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
@@ -19,6 +20,7 @@ RUN pip3 install -r requirements.txt
 ENV PYTHONPATH="."
 ENV PATH="${PATH}:/home/python/.local/bin"
 ENV USER="python"
+ENV SANIC_MODE="${MODE}"
 
 COPY --chown=python:python ./src .
 
