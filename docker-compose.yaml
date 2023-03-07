@@ -9,14 +9,16 @@ services:
         - "GID=${GID}"
     ports:
       - '80:8000'
+    command: [ "sanic", "server.app", "--host=0.0.0.0", "--fast" ]
   server-dev:
     build:
       context: ./
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       args:
         - "UID=${UID}"
         - "GID=${GID}"
     ports:
       - '5000:8000'
+    command: [ "sanic", "server.app", "--host=0.0.0.0", "--dev" ]
     volumes:
       - ./src:/app
