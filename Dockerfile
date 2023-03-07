@@ -23,3 +23,5 @@ ENV USER="python"
 COPY --chown=python:python ./src .
 
 EXPOSE 8000
+
+CMD [ "sanic", "server.app", "--host=0.0.0.0", "--fast" ]

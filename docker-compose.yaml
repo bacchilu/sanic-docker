@@ -1,5 +1,5 @@
 services:
-  server:
+  sanic-prod:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
     ports:
       - '80:8000'
     command: [ "sanic", "server.app", "--host=0.0.0.0", "--fast" ]
-  server-dev:
+  sanic-dev:
     build:
       context: ./
       dockerfile: Dockerfile
