@@ -5,7 +5,7 @@ WORKDIR /app
 
 ARG UID
 ARG GID
-ARG MODE
+ARG MODE=PROD
 
 RUN groupadd -g "${GID}" python
 RUN useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
