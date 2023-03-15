@@ -12,4 +12,4 @@ async def hello_world(request: Request):
 
 @app.route("/json")
 async def json_handler(request):
-    return json({"hello": "world"})
+    return json({"hello": "world", "mode": app.config.MODE})
